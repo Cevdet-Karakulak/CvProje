@@ -28,6 +28,29 @@ namespace CWProje.Controllers
             repo.TAdd(p);
             return RedirectToAction("Index");
         }
+        public ActionResult DeneyimSil(int id)
+        {
+           Deneyimlerim t=repo.Find(x=>x.ID==id);
+            repo.Tdelete(t);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult DeneyimGetir(int id)
+        {
+            Deneyimlerim t=repo.Find(x=> x.ID==id);
+            return View(t);
+        }
+        [HttpPost]
+        public ActionResult DeneyimGetir(Deneyimlerim p)
+        {
+            Deneyimlerim t = repo.Find(x => x.ID == p.ID);
+            t.Baslik=p.Baslik;
+            t.AltBaslik=p.AltBaslik;
+            t.Tarih=p.Tarih;
+            t.Aciklama=p.Aciklama;
+            repo.Tupdate(t);
+            return RedirectToAction("Index"); 
+        }
     }
    
 }
