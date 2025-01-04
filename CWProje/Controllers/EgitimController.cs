@@ -50,7 +50,7 @@ namespace CWProje.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View("EgitimEkle");
+                return View("EgitimDuzenle");
             }
             var egitim=repo.Find(x=>x.ID==t.ID);
             egitim.Baslik=t.Baslik;
