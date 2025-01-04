@@ -33,5 +33,6 @@ namespace CWProje.Models.Entity
         public virtual DbSet<iletisim> iletisim { get; set; }
         public virtual DbSet<Sertifikalarim> Sertifikalarim { get; set; }
         public virtual DbSet<Yeteneklerim> Yeteneklerim { get; set; }
+        public virtual DbSet<SosyalMedya> SosyalMedya { get; set; }
     }
 }
