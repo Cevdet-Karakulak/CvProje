@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace CWProje.Controllers
 {
+    [Authorize]
     public class EgitimController : Controller
     {
         // GET: Egitim

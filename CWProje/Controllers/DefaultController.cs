@@ -7,6 +7,7 @@ using CWProje.Models.Entity;
 
 namespace CWProje.Controllers
 {
+    [AllowAnonymous]
     public class DefaultController : Controller
     {
         // GET: Default
@@ -18,7 +19,7 @@ namespace CWProje.Controllers
         }
         public PartialViewResult SosyalMedya()
         {
-            var sosyalmedya = db.SosyalMedya.ToList();
+            var sosyalmedya = db.SosyalMedya.Where(x=>x.Durum==true).ToList();
             return PartialView(sosyalmedya);
         }
         public PartialViewResult Deneyim()

@@ -1,0 +1,29 @@
+﻿@using CWProje.Models.Entity;
+@model List<Admin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Admin İşlemleri</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kulllancı Adı</th>
+        <th>Düzenle</th>
+        <th>Sil</th>
+    </tr>
+    <tr>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.KullaniciAdi</td>
+            <td><a href="/Admin/AdminDuzenle/@item.ID" class="btn btn-success">Düzenle</a></td>
+            <td><a href="/Admin/AdminSil/@item.ID" class="btn btn-danger">Sil</a></td>
+        </tr>
+
+    }
+    </table>
+    <a href="/Admin/AdminEkle/" class="btn btn-primary">Yeni Kulllanıcı Ekle</a>
